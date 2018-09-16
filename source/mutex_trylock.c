@@ -10,7 +10,8 @@
 #include "pthreadP.h"
 #include <lowlevellock.h>
 
-
+#include "xdefines.h"
+//msx
 
 #ifndef lll_trylock_elision
 #define lll_trylock_elision(a,t) lll_trylock(a)
@@ -26,7 +27,8 @@ pthread_mutex_trylock (pthread_mutex_t *mutex) {
   __atomic_fetch_add(&totalLocks, 1, __ATOMIC_RELAXED);
 #endif
 #ifndef ORIGINAL
-	int tid = getThreadIndex();
+int tid = current->index;
+//getThreadIndex();
   if( !is_my_mutex(mutex) )
   {
 		mutex_t *new_mutex = create_mutex(mutex);

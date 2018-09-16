@@ -273,7 +273,8 @@ public:
 		}
 		else {
 			thread->parentRuntime=getParentRuntime(thread->pindex);
-			thread->pindex = getThreadIndex();
+			thread->pindex =  current->index;
+//getThreadIndex();
 		}
 
 		global_unlock();

@@ -17,6 +17,8 @@
 
 #include<mutex_manager.h>
 
+#include "xdefines.h"
+//msx
 
 #ifndef NO_INCR
 #include "xdefines.h"
@@ -62,7 +64,8 @@ pthread_mutex_lock (pthread_mutex_t *mutex)
 	struct timeinfo wait_start;
 
 #ifndef ORIGINAL
-	int tid = getThreadIndex();
+	int tid = current->index;
+//getThreadIndex();
 
 #ifndef NO_INCR // when not called for cond_lock
 	if( !is_my_mutex(mutex) ) 

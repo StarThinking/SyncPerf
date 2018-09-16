@@ -15,6 +15,8 @@
 #include <sysdep.h>
 #include "mutex_manager.h"
 
+#include "xdefines.h"
+//msx
 
 struct _condvar_cleanup_buffer
 {
@@ -102,7 +104,8 @@ pthread_cond_wait (pthread_cond_t *cond, pthread_mutex_t *mutex)
 #ifndef ORIGINAL
 	pthread_mutex_t *orig_mutex;
 	orig_mutex = mutex; //store for passing in the cond_lock func
-	int tid = getThreadIndex();
+	int tid =  current->index;
+//getThreadIndex();
   mutex_t *mutex_data = (mutex_t *)get_mutex(mutex);
 	
   mutex = &mutex_data->mutex;
