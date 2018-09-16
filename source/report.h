@@ -193,9 +193,9 @@ public:
 		setFileName();
 #endif
 
-		std::cout<< "\n\nSyncPerf Msg: END OF PROGRAM";
+//		std::cout<< "\n\nSyncPerf Msg: END OF PROGRAM";
 		
-		std::cout<< "\nSyncPerf Msg: Reporting in file: syncperf.report\nSyncPerf Msg: Thread reports in file: thread.csv " << std::endl;
+//		std::cout<< "\nSyncPerf Msg: Reporting in file: syncperf.report\nSyncPerf Msg: Thread reports in file: thread.csv " << std::endl;
 #ifdef COMBINED_REPORT
 		std::vector<sync_perf_t>high_conflict_low_freq;
 		std::vector<sync_perf_t>high_conflict_high_freq;
